@@ -1,12 +1,18 @@
-export default function Nav() {
+import Link from "next/link";
+export default async function Nav() {
   return (
-    <nav className="float-right border-white border-2 h-full w-16 p-2">
-      <div
-        id="Friend_Icon_Div"
-        className="flex items-center justify-center flex-col hover:opacity-50"
-      >
-        <i className="bi bi-person-fill text-3xl"></i>
-        <p className="text-sm">51</p>
+    <nav className="p-2 flex h-fit w-dvw fixed">
+      <div className=" flex gap-4">
+        <i className="bi bi-house-door-fill"></i>
+        <Link href="../matches">
+          <i className="bi bi-tv-fill"></i>
+        </Link>
+      </div>
+
+      <div className="ml-auto mr-auto flex justify-center items-center">
+        <div>
+          <p>PLAY</p>
+        </div>
       </div>
     </nav>
   );
