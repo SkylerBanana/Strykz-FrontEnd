@@ -11,7 +11,9 @@ export default async function Nav() {
 
       <div className="ml-auto mr-auto flex justify-center items-center">
         <div>
-          <p>PLAY</p>
+          <Link href="../play">
+            <p>PLAY</p>
+          </Link>
         </div>
       </div>
     </nav>
