@@ -7,6 +7,10 @@ export default async function Nav() {
         <Link href="../matches">
           <i className="bi bi-tv-fill"></i>
         </Link>
+
+        <Link href="/settings">
+          <i className="bi bi-gear-fill"></i>
+        </Link>
       </div>
 
       <div className="ml-auto mr-auto flex justify-center items-center">
