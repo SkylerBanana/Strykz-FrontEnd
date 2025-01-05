@@ -1,7 +1,11 @@
+import Layout from "../components/Layout";
+
 export default async function settings() {
   return (
-    <div>
-      <p>Hello Settings Page!!!</p>
-    </div>
+    <Layout>
+      <div>
+        <p>Hi</p>
+      </div>
+    </Layout>
   );
 }

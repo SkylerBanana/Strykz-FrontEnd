@@ -1,15 +1,23 @@
+"use client";
 import Link from "next/link";
-export default async function Nav() {
+export default function Nav() {
   return (
-    <nav className="p-2 flex h-fit w-dvw fixed">
+    <nav className="p-2 flex h-fit w-dvw ">
       <div className=" flex gap-4">
-        <i className="bi bi-house-door-fill"></i>
+        <div className="hover:bg-gray-500 py-1 px-2 rounded">
+          <i className="bi bi-house-door-fill"></i>
+        </div>
+
         <Link href="../matches">
-          <i className="bi bi-tv-fill"></i>
+          <div className="hover:bg-gray-500 py-1 px-2 rounded">
+            <i className="bi bi-tv-fill"></i>
+          </div>
         </Link>
 
         <Link href="/settings">
-          <i className="bi bi-gear-fill"></i>
+          <div className="hover:bg-gray-500 py-1 px-2 rounded">
+            <i className="bi bi-gear-fill"></i>
+          </div>
         </Link>
       </div>
 
