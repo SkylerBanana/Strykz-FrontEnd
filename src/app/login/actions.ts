@@ -3,7 +3,7 @@
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 import { z } from "zod";
-import { createClient } from '../../../utils/supabase/server'
+import { createClient } from '../../utils/supabase/server'
 
 
 const userSchema = z.object({
