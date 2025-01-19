@@ -1,4 +1,5 @@
 import Layout from "../components/Layout";
+import SettingsList from "../components/ui/SettingsList";
 import { createClient } from "../../utils/supabase/server";
 import { redirect } from "next/navigation";
 
@@ -12,7 +13,7 @@ export default async function settings() {
   return (
     <Layout>
       <div>
-        <p>Hi</p>
+        <SettingsList />
       </div>
     </Layout>
   );

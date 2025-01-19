@@ -5,20 +5,25 @@ import { createClient } from "@/utils/supabase/client";
 
 export default function PlayButton() {
   const [isqueing, setIsQueing] = useState(false);
+
   const [token, setToken] = useState<string | null>(null);
+
   const webSocketRef = useRef<WebSocket | null>(null);
+
   const supabase = createClient();
 
   async function GetToken() {
     if (!token) {
       const { data: session } = await supabase.auth.getSession();
       if (session.session && session.session.access_token) {
+        console.log(session);
         setToken(session.session.access_token);
       } else {
         console.log("No session or access token found.");
       }
     }
   }
+
   useEffect(() => {
     GetToken();
   }, []);
@@ -31,12 +36,12 @@ export default function PlayButton() {
       webSocketRef.current = socket;
 
       socket.onopen = function (event) {
-        console.log("Bingus");
         console.log(event);
       };
 
       socket.onclose = function (event) {
         console.log(event);
+        setToken("");
       };
       //cleanup
       return () => {
@@ -57,8 +62,6 @@ export default function PlayButton() {
 
   function Que() {
     setIsQueing(!isqueing);
-
-    //return GetJwt();
   }
 
   return (

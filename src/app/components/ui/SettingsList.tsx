@@ -1,12 +1,16 @@
-import { useState } from "react";
+import Link from "next/link";
+
 export default function SettingsList() {
-  const List = ["Account", "Game Settings", "Subscriptions"];
-  const [current, setCurrent] = useState("Account");
+  const List = ["account", "game", "subscriptions"];
 
   return (
     <ul>
-      {List.map((item) => (
-        <li>{item}</li>
+      {List.map((item, index) => (
+        <Link href={`settings/${item}`}>
+          <li key={index} id={item}>
+            {item}
+          </li>
+        </Link>
       ))}
     </ul>
   );
