@@ -27,9 +27,9 @@ export default async function checkSteam(steamUserId:string) {
     const hasCSS = json.response.games.some((game:gameType) => game.appid === 240);
 
     if (hasCSS) {
-      console.log("true");
+      return true
     } else {
-      console.log("False");
+      return false
     }
   } catch (error:any) {
     console.error("Error:", error.message);
