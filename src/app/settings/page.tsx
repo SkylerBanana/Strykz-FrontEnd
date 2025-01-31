@@ -1,5 +1,5 @@
 import Layout from "../components/Layout";
-import SettingsList from "../components/ui/SettingsList";
+import SettingsList from "./components/SettingsList";
 import { createClient } from "../../utils/supabase/server";
 import { redirect } from "next/navigation";
 

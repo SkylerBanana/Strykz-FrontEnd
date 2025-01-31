@@ -1,4 +1,4 @@
-import SubscriptionSettings from "@/app/components/ui/SubscriptionSettings";
+import SubscriptionSettings from "@/app/settings/components/SubscriptionSettings";
 export default async function Subscription() {
   return <SubscriptionSettings />;
 }

@@ -4,17 +4,18 @@ export default function Nav() {
   return (
     <nav className="p-2 flex h-fit w-dvw ">
       <div className=" flex gap-4">
-        <div className="hover:bg-gray-500 py-1 px-2 rounded">
-          <i className="bi bi-house-door-fill"></i>
-        </div>
-
+        <Link href="/">
+          <div className="hover:bg-gray-500 py-1 px-2 rounded">
+            <i className="bi bi-house-door-fill"></i>
+          </div>
+        </Link>
         <Link href="../matches">
           <div className="hover:bg-gray-500 py-1 px-2 rounded">
             <i className="bi bi-tv-fill"></i>
           </div>
         </Link>
 
-        <Link href="/settings">
+        <Link href="/settings/game">
           <div className="hover:bg-gray-500 py-1 px-2 rounded">
             <i className="bi bi-gear-fill"></i>
           </div>

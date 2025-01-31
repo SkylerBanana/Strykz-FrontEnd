@@ -1,4 +1,5 @@
 "use server";
+import linkSteamAccount from "./linkSteamAccount.js";
 export default async function checkSteam(steamUserId:string) {
   interface gameType{
     appid: number;
@@ -27,6 +28,7 @@ export default async function checkSteam(steamUserId:string) {
     const hasCSS = json.response.games.some((game:gameType) => game.appid === 240);
 
     if (hasCSS) {
+      linkSteamAccount(steamUserId)
       return true
     } else {
       return false

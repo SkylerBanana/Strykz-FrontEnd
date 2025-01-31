@@ -11,7 +11,6 @@ export default async function Home() {
   if (error || !data?.user) {
     redirect("/login");
   }
-  console.log(data);
   return (
     <div className="h-dvh w-dvw flex">
       <Nav />
