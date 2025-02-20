@@ -9,6 +9,7 @@ export default async function Play() {
   if (error || !data?.user) {
     redirect("/login");
   }
+  console.log(data);
 
   return (
     <div>

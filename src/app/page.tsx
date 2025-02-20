@@ -1,5 +1,4 @@
-import FriendsList from "./components/FriendsList";
-import Nav from "./components/Nav";
+import Layout from "./components/Layout";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { createClient } from "../utils/supabase/server";
 import { redirect } from "next/navigation";
@@ -13,10 +12,9 @@ export default async function Home() {
   }
   return (
     <div className="h-dvh w-dvw flex">
-      <Nav />
-
-      <FriendsList />
-      <main className="flex-grow"></main>
+      <Layout>
+        <main className="flex-grow"></main>
+      </Layout>
     </div>
   );
 }

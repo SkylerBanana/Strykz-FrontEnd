@@ -3,10 +3,14 @@ import { useState, useEffect, useRef } from "react";
 
 import { createClient } from "@/utils/supabase/client";
 
+import GetSteamid from "../actions/getSteamid";
+
 export default function PlayButton() {
   const [isqueing, setIsQueing] = useState(false);
 
   const [token, setToken] = useState<string | null>(null);
+
+  const [steamID, setSteamID] = useState<string | null>(null);
 
   const webSocketRef = useRef<WebSocket | null>(null);
 
@@ -24,8 +28,14 @@ export default function PlayButton() {
     }
   }
 
+  async function GetSteam() {
+    const steamid = await GetSteamid();
+    setSteamID(steamid);
+  }
+
   useEffect(() => {
     GetToken();
+    GetSteam();
   }, []);
 
   useEffect(() => {
@@ -65,8 +75,10 @@ export default function PlayButton() {
   }
 
   return (
-    <button onClick={Que} className="h-12 bg-orange-500">
-      PLAY
-    </button>
+    <div>
+      <button onClick={Que} className="h-12 bg-orange-500">
+        PLAY
+      </button>
+    </div>
   );
 }

@@ -1,5 +1,10 @@
+"use server";
+import { createClient } from "@/utils/supabase/server";
+
 export default async function LinkSteamAccount(steamUserId) {
-  if (!(await checkAccount(steamUserId))) {
+  const supabase = await createClient();
+
+  if (!(await checkAccount(supabase, steamUserId))) {
     const { error } = await supabase
       .from("profiles")
       .insert({ steam_id: steamUserId, owns_css: true });
@@ -12,7 +17,7 @@ export default async function LinkSteamAccount(steamUserId) {
   return { success: true };
 }
 
-async function checkAccount(steamUserId) {
+async function checkAccount(supabase, steamUserId) {
   const { data, error } = await supabase
     .from("profiles")
     .select("steam_id")

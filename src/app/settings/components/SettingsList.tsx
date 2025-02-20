@@ -5,8 +5,7 @@ import { usePathname } from "next/navigation";
 export default function SettingsList() {
   const pathname = usePathname();
   let removed = pathname.replace("/settings/", "");
-  const List = ["account", "game", "subscriptions"];
-  console.log(removed);
+  const List = ["Account", "Game", "Subscriptions"];
 
   return (
     <ul className="flex p-3 gap-4 items-center justify-center bg-[#20262b]">

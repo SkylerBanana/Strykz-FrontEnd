@@ -15,7 +15,7 @@ export default function Nav() {
           </div>
         </Link>
 
-        <Link href="/settings/game">
+        <Link href="/settings/Game">
           <div className="hover:bg-gray-500 py-1 px-2 rounded">
             <i className="bi bi-gear-fill"></i>
           </div>
